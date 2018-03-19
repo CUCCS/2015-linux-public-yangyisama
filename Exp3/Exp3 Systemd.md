@@ -46,7 +46,6 @@ https://asciinema.org/a/mS5GJEO119FI5K5OvGAyTwCfF
 1. 如何添加一个用户并使其具备sudo执行程序的权限？ 
 
 ```
-bash  
 #添加用户  
 adduser username   
 # 将用户添加到sudo组 
@@ -60,7 +59,6 @@ sudo usermod -aG groupname username
 3. 如何查看当前系统的分区表和文件系统详细信息？ 
 
 ```
-shell 
 fdisk -l 
 或 df -T 
 ```
@@ -68,29 +66,60 @@ fdisk -l
 4. 如何实现开机自动挂载Virtualbox的共享目录分区？ 
 
 ```
+#设置VirtualBox共享的本地文件夹
 #安装增强功能 
+sudo apt install virtualbox-guest-x11
 #手动将iso文件挂载，使用mount将/dev/cdrom挂载 
-mount -t vboxsf /dev/cdrom /mnt/share    
+mount -t vboxsf share /mnt/share    
 #编辑/etc/systemd/system/Auto_mount_service_file.service
 sudo systemctl enable  Auto_mount_service_file.service
 ```
+![image](image/1.png)
+
+出现错误：
+
+![image](image/2.png)
+
+执行：
+![image](image/3.png)
 5. 基于LVM（逻辑分卷管理）的分区如何实现动态扩容和缩减容量？
+ - 显示分区情况
+ 
+```
+sudo lvdisplay
+```
+
+![image](image/5.png)
+
+
+
+ - 扩容
 
 ```
-sudo lvextend -L +1G /dev/isc-vm-host-vg/home
-sudo lvextend -L -1G /dev/isc-vm-host-vg/home
+sudo lvextend -L +10M /dev/cuc_vg/swap_1
 ```
+
+![image](image/6.png)
+ 
+ - 减容
+ ```
+sudo lvreduce -L -10M /dev/cuc_vg/swap_1
+```
+
+
+![image](image/7.PNG)
 6. 如何通过systemd设置实现在网络连通时运行一个指定脚本，在网络断开时运行另一个脚本？
 向networking.service的设置文件中添加：
-
+通过systemctl status networking.service查看设置文件位置
 ```
 ExecStartPre=/bin/bash /home/cuc/1.sh
 ExecStartPost=/bin/bash /home/cuc/1.sh
 ```
+![image](image/8.png)
 
 7. 如何通过systemd设置实现一个脚本在任何情况下被杀死之后会立即重新启动？实现杀不死？
-以Mysql作为例子，向MySql的配置文件中添加
+向配置文件中添加
 ```
-ExecStartPost=/usr/share/mysql/mysql-systemd-start post
+Restart:always
 ```
-也就是说在该服务断开的时候进行启动
+![image](image/9.png)
