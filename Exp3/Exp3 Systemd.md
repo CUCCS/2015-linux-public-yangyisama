@@ -33,12 +33,15 @@ $ sudo systemctl rescue
 ```
 ### 命令篇 
 - systemd-analyze + hostnamectl+localectl
- - 视频链接：https://asciinema.org/a/H1yc7ZWDuFja1Q4Z9DcnTWp8R
+
+  - 视频链接：https://asciinema.org/a/H1yc7ZWDuFja1Q4Z9DcnTWp8R
 
 - timedatectl + loginctl+Unit + Target + journalctl 
- - 视频链接：
- - https://asciinema.org/a/fOXsNqNso7pt0e4mo2FK9u7GA
- - https://asciinema.org/a/7BGoHqbQs51BECwA620QzdU2j
+
+  - 视频链接：
+   https://asciinema.org/a/fOXsNqNso7pt0e4mo2FK9u7GA
+   https://asciinema.org/a/7BGoHqbQs51BECwA620QzdU2j
+ 
 ### 实战篇
 https://asciinema.org/a/mS5GJEO119FI5K5OvGAyTwCfF
 
@@ -46,7 +49,7 @@ https://asciinema.org/a/mS5GJEO119FI5K5OvGAyTwCfF
 1. 如何添加一个用户并使其具备sudo执行程序的权限？ 
 
 ```
-#添加用户  
+#添加用户  
 adduser username   
 # 将用户添加到sudo组 
 sudo usermod -aG sudo username  
@@ -82,6 +85,7 @@ sudo systemctl enable  Auto_mount_service_file.service
 
 执行：
 ![image](image/3.png)
+
 5. 基于LVM（逻辑分卷管理）的分区如何实现动态扩容和缩减容量？
  - 显示分区情况
  
