@@ -20,7 +20,7 @@
 
 ![image](p/2.png)
 
-其他功能出现bug，一直无法对图片进行处理，程序也不退出
+其他功能出现bug，一直无法对图片进行处理，程序也不退出，仍在调试中
 
 - 统计不同年龄区间范围（20岁以下、[20-30]、30岁以上）的球员数量、百分比
 
@@ -65,4 +65,9 @@
 给定URL输出TOP 100访问来源主机
 
 ![image](p/11.png)
+
+参考项目：2014级谭嘉怡 的代码1 https://github.com/CUCCS/linux/tree/master/2017-1/TJY
+linux shell命令行选项与参数用法详解 https://blog.csdn.net/mlljava1111/article/details/53906684
+Linux使用imagemagick https://www.cnblogs.com/tinywan/p/7060802.html
+
 
