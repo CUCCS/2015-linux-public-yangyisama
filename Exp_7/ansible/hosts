@@ -1,0 +1,5 @@
+[webservers]
+ubuntu-www ansible_ssh_host=192.168.203.3 insible_ssh_user=root ansible_ssh_port=22
+
+[ubuntu]
+ubuntu-www

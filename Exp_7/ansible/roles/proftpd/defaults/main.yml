@@ -1,0 +1,15 @@
+---
+# vars file for ansible-proftpd
+
+# FTP:proftpd
+# white list
+PRO_WHITE_IP: 192.168.203.3
+# virtual user
+PRO_VIRTUAL_USER: user1
+PRO_DIR: /srv/ftp
+PRO_UID: 1024
+PRO_GID: 1024
+PRO_VIR_DIR: /home/user1
+PRO_LIMIT: 700
+PRO_GROUP_NAME: VisualUsers
+PRO_VIRTUAL_PASS: "password"
